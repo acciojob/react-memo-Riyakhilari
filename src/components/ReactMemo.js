@@ -1,15 +1,13 @@
-
 import React, { useState } from "react";
 
 const ReactMemo = () => {
   const [input, setInput] = useState("");
-
   const [list, setList] = useState([]);
 
   const onInput = (e) => {
-    const { value } = e.target;
-    setInput(value);
+    setInput(e.target.value);
   };
+
   const onAddSkill = () => {
     if (input.trim().length > 5) {
       setList((prev) => [...prev, input.trim()]);
@@ -22,15 +20,16 @@ const ReactMemo = () => {
       <h1>React.memo</h1>
       <div>
         <input
+          id="memo-input"
           value={input}
           onChange={onInput}
           placeholder="Enter a custom task"
         />
-        <button onClick={onAddSkill}>Add Skill</button>
+        <button id="add-skill" onClick={onAddSkill}>Add Skill</button>
       </div>
       <ul>
-        {list.map((i, index) => (
-          <li key={index}>{i}</li>
+        {list.map((task, index) => (
+          <li key={index}>{task}</li>
         ))}
       </ul>
     </div>
