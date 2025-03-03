@@ -13,11 +13,11 @@ const UseMemo = () => {
     <div>
       <h2>Counter</h2>
       <div>
-        <span>Count: {count}</span>
+        <span id="count-value">Count: {count}</span>
         <button id="increment-btn" onClick={onIncrease}>+</button>
       </div>
       <h2>Expensive Calculation</h2>
-      <p>{result}</p>
+      <p id="calc-result">{result}</p>
     </div>
   );
 };
