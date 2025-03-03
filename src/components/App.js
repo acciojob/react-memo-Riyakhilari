@@ -21,6 +21,8 @@ const App = () => {
       </ul>
 
       <button onClick={onAdd}>Add Todo</button>
+  <button id="add-todo" onClick={onAdd}>Add Todo</button>
+
 
       <hr />
       <UseMemo />
