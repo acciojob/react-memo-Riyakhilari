@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import UseMemo from "./UseMemo";
 import ReactMemo from "./ReactMemo";
+cy.get('button').debug();
 
 const App = () => {
   const [tasks, setTasks] = useState([]);
