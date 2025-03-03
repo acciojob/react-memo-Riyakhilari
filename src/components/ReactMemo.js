@@ -27,7 +27,7 @@ const ReactMemo = () => {
         />
         <button id="add-skill" onClick={onAddSkill}>Add Skill</button>
       </div>
-      <ul>
+      <ul id="skill-list">
         {list.map((task, index) => (
           <li key={index}>{task}</li>
         ))}
