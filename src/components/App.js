@@ -1,31 +1,31 @@
+
 import React, { useState } from "react";
-import TodoList from "./components/TodoList";
-import UseMemo from "./components/UseMemo";
-import ReactMemo from "./components/ReactMemo";
+import UseMemo from "./UseMemo";
+import ReactMemo from "./ReactMemo";
 
 const App = () => {
-  const [todos, setTodos] = useState(["New todo"]);
-  const [count, setCount] = useState(0);
+  const [tasks, setTasks] = useState([]);
 
-  const addTodo = () => {
-    setTodos([...todos, "New todo"]);
+  const onAdd = () => {
+    setTasks((prev) => [...prev, "New Todo"]);
   };
-
   return (
-    <div>
+    <div id="main">
       <h1>React.useMemo</h1>
       <h2>My todos</h2>
-      <button onClick={addTodo}>Add Todo</button>
-      <p>Count: {count} <button onClick={() => setCount(count + 1)}>+</button></p>
+      <ul>
+        {tasks.map((i, index) => (
+          <li key={index}>{i}</li>
+        ))}
+      </ul>
 
-      <h2>Expensive Calculation</h2>
-      <UseMemo count={count} />
+      <button onClick={onAdd}>Add Todo</button>
 
-      <h2>React.memo</h2>
+      <hr />
+      <UseMemo />
+      <hr />
+      <hr />
       <ReactMemo />
-      
-      <h3>Todo List</h3>
-      <TodoList todos={todos} />
     </div>
   );
 };
